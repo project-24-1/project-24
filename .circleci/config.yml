@@ -1,12 +1,13 @@
- version: 2.1
+version: 2.1
 
- orbs:
-  win: circleci/windows@2.2.0
+orbs:
+  android: circleci/android@0.2.1
 
- jobs:
-   build:
-     executor: win/default     
-    
-     steps:
-       - checkout
-       - run: sh project.sh
+jobs:
+  build:
+    executor: android/android
+
+    steps:
+      - checkout
+      - run:
+          command: sh project.sh
